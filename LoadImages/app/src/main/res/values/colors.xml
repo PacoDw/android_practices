@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e3e2e2</color>
+    <color name="colorCamera">#dcdcdc</color>
+    <color name="colorPrimaryDark">#128777</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorPink">#880e4f</color>
+    <color name="colorPinkDark">#560027</color>
+</resources>
