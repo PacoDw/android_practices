@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.loadBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                File dir = new File(Environment.getExternalStorageDirectory() + "/TestFolder");
+                File dir = new File(Environment.getExternalStorageDirectory().getPath(), "TestFolder");
                 if (dir.exists() && dir.isDirectory()) {
 
                     Toast.makeText(
@@ -58,17 +59,17 @@ public class MainActivity extends AppCompatActivity {
                             "Si existe!!",
                             Toast.LENGTH_LONG
                     ).show();
-                    //String dirPath = "g:/Music/English";
-                    // File dir = new File(dirPath);
                     File[] files = dir.listFiles();
+
 
                     if (files.length == 0) {
                         Toast.makeText(getApplicationContext(), "No hay archivos", Toast.LENGTH_LONG).show();
                     }
                     else
                     {
+                        archivos.clear();
+
                         for (File aFile : files) {
-                            System.out.println(aFile.getName() + " - " + aFile.length());
                             archivos.add(aFile.getName());
                         }
                         adapter = new ArrayAdapter<>(
